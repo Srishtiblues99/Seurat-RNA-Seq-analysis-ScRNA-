@@ -1,11 +1,11 @@
-install.packages('Seurat')
+#install.packages('Seurat')
 library(Seurat)
-remove.packages("Matrix")
-install.packages("Matrix")
+#remove.packages("Matrix")
+#install.packages("Matrix")
 library(Matrix)
-devtools::install_github("thomasp85/patchwork")
+#devtools::install_github("thomasp85/patchwork")
 
-install.packages("devtools")
+#install.packages("devtools")
 library(devtools)
 library(patchwork)
 data = Read10X(data.dir = "C:/Users/shristi/Documents/GSE192723_RAW/GSM5763644_filtered_feature_bc_matrix_A8/filtered_feature_bc_matrix_A8")
@@ -43,11 +43,11 @@ DimPlot(osm, reduction = "umap")
 DimPlot(osm, reduction = "umap", label = T)
 osm.markers = FindAllMarkers(osm, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)
 head(osm.markers)
-if (packageVersion("devtools") < 1.6) {
-  install.packages("devtools")
+#if (packageVersion("devtools") < 1.6) {
+  #install.packages("devtools")
 }
-devtools::install_github("hadley/lazyeval")
-devtools::install_github("hadley/dplyr")
+#devtools::install_github("hadley/lazyeval")
+#devtools::install_github("hadley/dplyr")
 library(dplyr)
 a1 = osm.markers %>% group_by(cluster) %>% top_n(n = 2, wt = avg_log2FC)
 a1
